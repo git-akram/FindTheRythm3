@@ -104,5 +104,10 @@ public class IndexActivity extends Activity {
 			
 		}
 	};
+	@Override
+	public void onBackPressed() {
+	   Log.d("CDA", "onBackPressed Called");
+	   startActivity(new Intent(IndexActivity.this , IndexActivity.class));
+	}
 
 }

@@ -7,6 +7,8 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -115,7 +117,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 			
 			if(deltaX == 0 && deltaY == 0)
 			{
-				Log.i(TAG, "Etat " + etat);
+				Log.i(TAG, "Etat ... " + etat);
 				return;
 			}
 			
@@ -130,7 +132,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 						etat = Etat.gauche;
 						Log.i(TAG, "Etat "+etat);
 					}
-					else{
+					else if(deltaX < 0){
 						etat = Etat.droite;
 						Log.i(TAG, "Etat "+etat);
 					}							
@@ -139,13 +141,23 @@ import com.mmm.findtherythm3.conf.Instrument;
 			}
 			else if(etat == Etat.droite){
 				if(deltaX < 0)
-					etat = Etat.gauche;
+					etat = Etat.centre;
 			}
-			else if(etat == Etat.gauche)
+			else if(etat == Etat.gauche){
 				if(deltaX > 0)
+<<<<<<< HEAD
 					etat = Etat.droite;			*/
 		}
 			        
  }
+
+	
+		
+
+	public void onBackPressed() {
+	   Log.d("CDA", "onBackPressed Called");
+	   startActivity(new Intent(DrumsActivity.this , IndexActivity.class));
+	}
+
 
 }
