@@ -40,4 +40,15 @@
         android:layout_alignBottom="@+id/dundrum_button"
         android:layout_alignLeft="@+id/eldrum_button" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/drumdol_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/Choose_instrument"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" />
+
 </RelativeLayout>

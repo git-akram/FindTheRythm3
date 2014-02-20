@@ -61,6 +61,7 @@ public final class R {
         public static final int kendrum=0x7f040005;
     }
     public static final class string {
+        public static final int Choose_instrument=0x7f060008;
         public static final int Conf=0x7f060006;
         public static final int Quit=0x7f060007;
         public static final int Start=0x7f060005;
