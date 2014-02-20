@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_off"
     android:orientation="vertical" >
-    
 
-</LinearLayout>
+    <Button
+        android:id="@+id/drumdol_button"
+        android:layout_width="144dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="27dp" />
+
+    <Button
+        android:id="@+id/eldrum_button"
+        android:layout_width="144dp"
+        android:layout_height="100dp"
+        android:layout_alignBaseline="@+id/drumdol_button"
+        android:layout_alignBottom="@+id/drumdol_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp" />
+
+    <Button
+        android:id="@+id/dundrum_button"
+        android:layout_width="144dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/drumdol_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/kendrum_button"
+        android:layout_width="144dp"
+        android:layout_height="100dp"
+        android:layout_alignBaseline="@+id/dundrum_button"
+        android:layout_alignBottom="@+id/dundrum_button"
+        android:layout_alignLeft="@+id/eldrum_button" />
+
+</RelativeLayout>
