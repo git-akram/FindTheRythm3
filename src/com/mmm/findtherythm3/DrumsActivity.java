@@ -8,6 +8,7 @@ import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 
@@ -121,8 +122,13 @@ import android.view.Menu;
 			else if(etat == Etat.gauche)
 				if(deltaX > 0)
 					etat = Etat.droite;			
-		}
-			        
- }
+		}	        
+	}
+	
+	@Override
+	public void onBackPressed() {
+	   Log.d("CDA", "onBackPressed Called");
+	   startActivity(new Intent(DrumsActivity.this , IndexActivity.class));
+	}
 
 }

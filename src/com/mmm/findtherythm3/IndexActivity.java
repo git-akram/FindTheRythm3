@@ -4,6 +4,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
@@ -95,5 +96,10 @@ public class IndexActivity extends Activity {
 			}
 		}
 	};
+	@Override
+	public void onBackPressed() {
+	   Log.d("CDA", "onBackPressed Called");
+	   startActivity(new Intent(IndexActivity.this , IndexActivity.class));
+	}
 
 }
