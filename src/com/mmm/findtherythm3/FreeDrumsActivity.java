@@ -154,16 +154,16 @@ public class FreeDrumsActivity extends Activity implements SensorEventListener {
 	
 	public void chooseSound(Etat etat) {
 		if(etat == Etat.centre) {
-			playSound(R.id.);
+			playSound(R.raw.rightdown);
 		}
 		else if(etat == Etat.droite) {
-			playSound(R.id.);
+			playSound(R.raw.rightup);
 		}
 		else if(etat == Etat.gauche) {
-			playSound(R.id.);	
+			playSound(R.raw.leftup);	
 		}
 		else if(etat == Etat.haut) {
-			playSound(R.id.);
+			playSound(R.raw.leftdown);
 		}
 	}
 }

@@ -88,22 +88,22 @@ public class IndexActivity extends Activity {
 		@Override
 		public void onClick(View button) {
 			if(button.getId() == R.id.drumdol_button) {
-				instrument.setSonId(R.raw.drumdol);
+				instrument.setSonId(R.raw.leftup);
 				instrument.setImageId(R.drawable.leftup);
 				Log.i("Index Activity", "drumdol_button clicked");
 			}
 			else if(button.getId() == R.id.dundrum_button) {
-				instrument.setSonId(R.raw.dundrum);
+				instrument.setSonId(R.raw.leftdown);
 				instrument.setImageId(R.drawable.leftdown);
 				Log.i("Index Activity", "dundrum_button clicked");
 			}
 			else if(button.getId() == R.id.eldrum_button) {
-				instrument.setSonId(R.raw.eldrum);
+				instrument.setSonId(R.raw.rightup);
 				instrument.setImageId(R.drawable.rightup);
 				Log.i("Index Activity", "eldrum_button clicked");
 			}
 			else if(button.getId() == R.id.kendrum_button) {
-				instrument.setSonId(R.raw.kendrum);
+				instrument.setSonId(R.raw.rightdown);
 				instrument.setImageId(R.drawable.rightdown);
 				Log.i("Index Activity", "kendrum_button clicked");
 			}

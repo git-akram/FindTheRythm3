@@ -20,7 +20,6 @@ import com.mmm.findtherythm3.conf.Instrument;
 
 	public class DrumsActivity extends  Activity implements SensorEventListener{
 	MediaPlayer mMediaPlayer = new MediaPlayer();
-	private Button soundButton;
 	SensorManager mSensorManager;
 	Sensor mAccelerometer;
 	private float  mLastX ,mLastY, mLastZ;
@@ -40,8 +39,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 		rl.setBackgroundResource(Instrument.getInstance().getImageId());
 		Log.i("drumactivity", Integer.toString(Instrument.getInstance().getSonId()));
 		configSound();
-		soundButton = (Button) findViewById(R.id.button1);
-		soundButton.setOnClickListener(chooseSound);
+		
 		
 		Log.i("drumactivity", Integer.toString(Instrument.getInstance().getSonId()));
 		//Declarer le manager des sensor
@@ -117,13 +115,15 @@ import com.mmm.findtherythm3.conf.Instrument;
 			
 			if(deltaX == 0 && deltaY == 0)
 				return;
+			Log.i(TAG, "New move x "+x+" y "+y+" z "+z);
+			mMediaPlayer.start();
 			
-			if (Math.abs(deltaX) < NOISE_etat) deltaX = (float)0.0;
+			/*if (Math.abs(deltaX) < NOISE_etat) deltaX = (float)0.0;
 			if (Math.abs(deltaY) < NOISE_etat) deltaY = (float)0.0;
 			
 			if(deltaX == 0 && deltaY == 0)
 			{
-				Log.i(TAG, "Etat " + etat);
+				Log.i(TAG, "Etat ... " + etat);
 				return;
 			}
 			
@@ -138,7 +138,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 						etat = Etat.gauche;
 						Log.i(TAG, "Etat "+etat);
 					}
-					else{
+					else if(deltaX < 0){
 						etat = Etat.droite;
 						Log.i(TAG, "Etat "+etat);
 					}							
@@ -147,18 +147,23 @@ import com.mmm.findtherythm3.conf.Instrument;
 			}
 			else if(etat == Etat.droite){
 				if(deltaX < 0)
-					etat = Etat.gauche;
+					etat = Etat.centre;
 			}
-			else if(etat == Etat.gauche)
+			else if(etat == Etat.gauche){
 				if(deltaX > 0)
-					etat = Etat.droite;			
-		}	        
-	}
+<<<<<<< HEAD
+					etat = Etat.droite;			*/
+		}
+			        
+ }
+
 	
-	@Override
+		
+
 	public void onBackPressed() {
 	   Log.d("CDA", "onBackPressed Called");
 	   startActivity(new Intent(DrumsActivity.this , IndexActivity.class));
 	}
+
 
 }
