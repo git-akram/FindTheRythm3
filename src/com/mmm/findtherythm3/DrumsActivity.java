@@ -19,7 +19,6 @@ import com.mmm.findtherythm3.conf.Instrument;
 
 	public class DrumsActivity extends  Activity implements SensorEventListener{
 	MediaPlayer mMediaPlayer = new MediaPlayer();
-	private Button soundButton;
 	SensorManager mSensorManager;
 	Sensor mAccelerometer;
 	private float  mLastX ,mLastY, mLastZ;
@@ -39,8 +38,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 		rl.setBackgroundResource(Instrument.getInstance().getImageId());
 		Log.i("drumactivity", Integer.toString(Instrument.getInstance().getSonId()));
 		configSound();
-		soundButton = (Button) findViewById(R.id.button1);
-		soundButton.setOnClickListener(chooseSound);
+		
 		
 		Log.i("drumactivity", Integer.toString(Instrument.getInstance().getSonId()));
 		//Declarer le manager des sensor
@@ -51,15 +49,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 		        //Init 
 		        mInitialized = false;
 	}
-	
-	OnClickListener chooseSound = new OnClickListener() {
-		@Override
-		public void onClick(View arg0) {
-			// TODO Auto-generated method stub
-			mMediaPlayer.start();
-		}
 
-				};
 				
 	public void configSound(){
 		mMediaPlayer = MediaPlayer.create(this,Instrument.getInstance().getSonId());
@@ -117,8 +107,10 @@ import com.mmm.findtherythm3.conf.Instrument;
 			
 			if(deltaX == 0 && deltaY == 0)
 				return;
+			Log.i(TAG, "New move x "+x+" y "+y+" z "+z);
+			mMediaPlayer.start();
 			
-			if (Math.abs(deltaX) < NOISE_etat) deltaX = (float)0.0;
+			/*if (Math.abs(deltaX) < NOISE_etat) deltaX = (float)0.0;
 			if (Math.abs(deltaY) < NOISE_etat) deltaY = (float)0.0;
 			
 			if(deltaX == 0 && deltaY == 0)
@@ -151,7 +143,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 			}
 			else if(etat == Etat.gauche)
 				if(deltaX > 0)
-					etat = Etat.droite;			
+					etat = Etat.droite;			*/
 		}
 			        
  }
