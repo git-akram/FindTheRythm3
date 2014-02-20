@@ -145,11 +145,13 @@ public class FreeDrumsActivity extends Activity implements SensorEventListener {
 	}
 	
 	public void playSound(int soundId) {
-		mMediaPlayer = MediaPlayer.create(this,soundId);
-		mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-		mMediaPlayer.setLooping(false);
-		mMediaPlayer.setVolume(100, 100);
-		mMediaPlayer.start();
+		if(!mMediaPlayer.isPlaying()) {
+			mMediaPlayer = MediaPlayer.create(this,soundId);
+			mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+			mMediaPlayer.setLooping(false);
+			mMediaPlayer.setVolume(100, 100);
+			mMediaPlayer.start();
+		}
 	}
 	
 	public void chooseSound(Etat etat) {
