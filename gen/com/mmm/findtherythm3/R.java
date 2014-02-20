@@ -30,7 +30,7 @@ public final class R {
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f090004;
-        public static final int action_settings=0x7f090009;
+        public static final int action_settings=0x7f09000a;
         public static final int buttonConf=0x7f090002;
         public static final int buttonQuit=0x7f090003;
         public static final int buttonStart=0x7f090000;
@@ -38,6 +38,7 @@ public final class R {
         public static final int dundrum_button=0x7f090007;
         public static final int eldrum_button=0x7f090006;
         public static final int kendrum_button=0x7f090008;
+        public static final int textView1=0x7f090009;
         public static final int textViewTitle=0x7f090001;
     }
     public static final class layout {
@@ -57,6 +58,7 @@ public final class R {
         public static final int kendrum=0x7f040004;
     }
     public static final class string {
+        public static final int Choose_instrument=0x7f060008;
         public static final int Conf=0x7f060006;
         public static final int Quit=0x7f060007;
         public static final int Start=0x7f060005;

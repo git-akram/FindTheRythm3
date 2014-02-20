@@ -9,5 +9,6 @@
     <string name="Start">Start Game</string>
     <string name="Conf">Configuration</string>
     <string name="Quit">Quitter</string>
+    <string name="Choose_instrument">Choose your sound</string>
 
 </resources>
