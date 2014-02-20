@@ -13,6 +13,7 @@ public class IndexActivity extends Activity {
 	private Button startButton;
 	private Button confButton;
 	private Button quitButton;
+	private Button drum;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
