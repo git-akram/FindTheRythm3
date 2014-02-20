@@ -2,20 +2,23 @@ package com.mmm.findtherythm3.conf;
 
 public class Instrument {
 	
-	private static int sonId;
-	private static int imageId;
+	private int sonId;
+	private int imageId;
 	
-	public static int getSonId() {
+	public Instrument() {
+		super();
+	}
+	public int getSonId() {
 		return sonId;
 	}
-	public static void setSonId(int sonId) {
-		Instrument.sonId = sonId;
+	public void setSonId(int sonId) {
+		this.sonId = sonId;
 	}
-	public static int getImageId() {
+	public int getImageId() {
 		return imageId;
 	}
-	public static void setImageId(int imageId) {
-		Instrument.imageId = imageId;
+	public void setImageId(int imageId) {
+		this.imageId = imageId;
 	}
 	
 }

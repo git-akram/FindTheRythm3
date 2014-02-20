@@ -1,9 +1,11 @@
 package com.mmm.findtherythm3;
 
+import com.mmm.findtherythm3.conf.Instrument;
+
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,13 +13,15 @@ import android.widget.Button;
 
 public class IndexActivity extends Activity {
 
+	Instrument instrument = new Instrument();
+	
 	private Button startButton;
 	private Button confButton;
 	private Button quitButton;
-	private Button Buttoneldrum; // R1
-	private Button Buttonkendrum; // R2
-	private Button Buttondrumdol; // L1
-	private Button Buttondundrum; // L2
+	private Button buttoneldrum; // R1
+	private Button buttonkendrum; // R2
+	private Button buttondrumdol; // L1
+	private Button buttondundrum; // L2
 	
 	
 	@Override
@@ -31,10 +35,21 @@ public class IndexActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				setContentView(R.layout.choice);
-				Buttondrumdol = (Button) findViewById(R.id.drumdol_button);
-				Buttondundrum = (Button) findViewById(R.id.dundrum_button);
-				Buttoneldrum = (Button) findViewById(R.id.eldrum_button);
-				Buttondundrum = (Button) findViewById(R.id.dundrum_button);
+				buttondrumdol = (Button) findViewById(R.id.drumdol_button);
+				buttondundrum = (Button) findViewById(R.id.dundrum_button);
+				buttoneldrum = (Button) findViewById(R.id.eldrum_button);
+				buttonkendrum = (Button) findViewById(R.id.kendrum_button);
+				
+				buttondrumdol.setOnClickListener(drumsButtonHandler);
+				buttondundrum.setOnClickListener(drumsButtonHandler);
+				buttoneldrum.setOnClickListener(drumsButtonHandler);
+				buttonkendrum.setOnClickListener(drumsButtonHandler);
+				
+				setDrumsButton(buttondrumdol);
+				setDrumsButton(buttondundrum);
+				setDrumsButton(buttoneldrum);
+				setDrumsButton(buttonkendrum);
+				
 			}
 		});
 		confButton = (Button) findViewById(R.id.buttonConf);
@@ -63,18 +78,21 @@ public class IndexActivity extends Activity {
 		@Override
 		public void onClick(View button) {
 			if(button.getId() == R.id.drumdol_button) {
-				
+				instrument.setSonId(R.id.drumdol_button);
+				Log.i("Index Activity", "drumdol_button clicked");
 			}
 			else if(button.getId() == R.id.dundrum_button) {
-				
+				instrument.setSonId(R.id.dundrum_button);
+				Log.i("Index Activity", "dundrum_button clicked");
 			}
 			else if(button.getId() == R.id.eldrum_button) {
-				
+				instrument.setSonId(R.id.eldrum_button);
+				Log.i("Index Activity", "eldrum_button clicked");
 			}
-			else if(button.getId() == R.id.dundrum_button) {
-				
+			else if(button.getId() == R.id.kendrum_button) {
+				instrument.setSonId(R.id.kendrum_button);
+				Log.i("Index Activity", "kendrum_button clicked");
 			}
-			
 		}
 	};
 
