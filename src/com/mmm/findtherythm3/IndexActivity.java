@@ -1,9 +1,11 @@
 package com.mmm.findtherythm3;
 
+
 import com.mmm.findtherythm3.conf.Instrument;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
@@ -13,7 +15,7 @@ import android.widget.Button;
 
 public class IndexActivity extends Activity {
 
-	Instrument instrument = new Instrument();
+	Instrument instrument = Instrument.getInstance();
 	
 	private Button startButton;
 	private Button confButton;
@@ -79,20 +81,27 @@ public class IndexActivity extends Activity {
 		public void onClick(View button) {
 			if(button.getId() == R.id.drumdol_button) {
 				instrument.setSonId(R.id.drumdol_button);
+				instrument.setImageId(R.drawable.leftup);
 				Log.i("Index Activity", "drumdol_button clicked");
 			}
 			else if(button.getId() == R.id.dundrum_button) {
 				instrument.setSonId(R.id.dundrum_button);
+				instrument.setImageId(R.drawable.leftdown);
 				Log.i("Index Activity", "dundrum_button clicked");
 			}
 			else if(button.getId() == R.id.eldrum_button) {
 				instrument.setSonId(R.id.eldrum_button);
+				instrument.setImageId(R.drawable.rightup);
 				Log.i("Index Activity", "eldrum_button clicked");
 			}
 			else if(button.getId() == R.id.kendrum_button) {
 				instrument.setSonId(R.id.kendrum_button);
+				instrument.setImageId(R.drawable.rightdown);
 				Log.i("Index Activity", "kendrum_button clicked");
 			}
+			Intent intent = new Intent(IndexActivity.this, DrumsActivity.class);
+			startActivityForResult(intent,0);
+			
 		}
 	};
 

@@ -2,12 +2,24 @@ package com.mmm.findtherythm3.conf;
 
 public class Instrument {
 	
+	
+	private Instrument(){
+		
+	}
+
+ 
+	/** Instance unique pré-initialisée */
+	private static Instrument INSTANCE = new Instrument();
+ 
+	/** Point d'accès pour l'instance unique du singleton */
+	public static Instrument getInstance()
+	{	return INSTANCE;
+	}
+	
 	private int sonId;
 	private int imageId;
 	
-	public Instrument() {
-		super();
-	}
+
 	public int getSonId() {
 		return sonId;
 	}

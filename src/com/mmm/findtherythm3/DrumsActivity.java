@@ -1,8 +1,13 @@
 package com.mmm.findtherythm3;
 
+
+import com.mmm.findtherythm3.conf.Instrument;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
+import android.widget.RelativeLayout;
 
 public class DrumsActivity extends Activity {
 
@@ -10,6 +15,9 @@ public class DrumsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_drums);
+		RelativeLayout rl = (RelativeLayout) findViewById(R.id.layoutDrum);
+		rl.setBackgroundResource(Instrument.getInstance().getImageId());
+		Log.i("drumactivity", Integer.toString(Instrument.getInstance().getImageId()));
 	}
 
 	@Override
