@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonStart"
         android:layout_centerVertical="true"
-        android:text="@string/Conf"
+        android:text="@string/FreeStart"
         android:textSize="20sp"
         android:width="200dp" />
 

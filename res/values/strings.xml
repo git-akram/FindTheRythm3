@@ -6,10 +6,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_drums">DrumsActivity</string>
     <string name="title_index">Find The Rythm 3</string>
-    <string name="Start">Start Game</string>
+    <string name="Start">One Instrument</string>
     <string name="Conf">Configuration</string>
     <string name="Quit">Quitter</string>
     <string name="Choose_instrument">Choose your sound</string>
     <string name="title_activity_free_drums">FreeDrumsActivity</string>
+    <string name="FreeStart">Free Style</string>
 
 </resources>
