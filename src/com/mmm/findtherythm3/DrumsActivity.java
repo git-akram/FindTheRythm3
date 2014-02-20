@@ -7,7 +7,6 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -51,14 +50,21 @@ import com.mmm.findtherythm3.conf.Instrument;
 		        //Init 
 		        mInitialized = false;
 	}
-
+	
+	OnClickListener chooseSound = new OnClickListener() {
+		@Override
+		public void onClick(View arg0) {
+			mMediaPlayer.start();
+		}
+	};
 				
 	public void configSound(){
+		Instrument.getInstance().setSonId(R.raw.beep);
 		mMediaPlayer = MediaPlayer.create(this,Instrument.getInstance().getSonId());
 		mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		mMediaPlayer.setLooping(false);
 		mMediaPlayer.setVolume(100, 100);
-		}
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,10 +73,10 @@ import com.mmm.findtherythm3.conf.Instrument;
 		return true;
 	}
 	@Override
-	  protected void onResume() {
+	 protected void onResume() {
 	    super.onResume();
 	    mSensorManager.registerListener((SensorEventListener) this, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
-	  }
+	 }
 
 	  @Override
 	  protected void onPause() {

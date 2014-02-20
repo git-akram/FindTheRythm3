@@ -31,7 +31,7 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/buttonConf"
+        android:id="@+id/freeButtonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonStart"
@@ -44,9 +44,8 @@
         android:id="@+id/buttonQuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonConf"
-        android:layout_below="@+id/buttonConf"
-        android:layout_marginTop="14dp"
+        android:layout_alignLeft="@+id/freeButtonStart"
+        android:layout_below="@+id/freeButtonStart"
         android:text="@string/Quit"
         android:textSize="20sp"
         android:width="200dp" />

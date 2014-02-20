@@ -18,7 +18,7 @@ public class IndexActivity extends Activity {
 	Instrument instrument = Instrument.getInstance();
 	
 	private Button startButton;
-	private Button confButton;
+	private Button freeStartButton;
 	private Button quitButton;
 	private Button buttoneldrum; // R1
 	private Button buttonkendrum; // R2
@@ -54,7 +54,15 @@ public class IndexActivity extends Activity {
 				
 			}
 		});
-		confButton = (Button) findViewById(R.id.buttonConf);
+		
+		freeStartButton = (Button) findViewById(R.id.freeButtonStart);
+		freeStartButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(IndexActivity.this, FreeDrumsActivity.class));
+			}
+		});
+		
 		quitButton = (Button) findViewById(R.id.buttonQuit);
 		quitButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -104,6 +112,7 @@ public class IndexActivity extends Activity {
 			
 		}
 	};
+	
 	@Override
 	public void onBackPressed() {
 	   Log.d("CDA", "onBackPressed Called");

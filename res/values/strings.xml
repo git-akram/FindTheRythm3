@@ -10,5 +10,6 @@
     <string name="Conf">Configuration</string>
     <string name="Quit">Quitter</string>
     <string name="Choose_instrument">Choose your sound</string>
+    <string name="title_activity_free_drums">FreeDrumsActivity</string>
 
 </resources>
