@@ -152,6 +152,9 @@ public class FreeDrumsActivity extends Activity implements SensorEventListener {
 			mMediaPlayer.setVolume(100, 100);
 			mMediaPlayer.start();
 		}
+		else {
+			mMediaPlayer.stop();
+		}
 	}
 	
 	public void chooseSound(Etat etat) {
@@ -162,7 +165,8 @@ public class FreeDrumsActivity extends Activity implements SensorEventListener {
 			playSound(R.raw.rightup);
 		}
 		else if(etat == Etat.gauche) {
-			playSound(R.raw.leftup);	
+			playSound(R.raw.leftup);
+			mMediaPlayer.seekTo(1000);
 		}
 		else if(etat == Etat.haut) {
 			playSound(R.raw.leftdown);

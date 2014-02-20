@@ -59,7 +59,6 @@ import com.mmm.findtherythm3.conf.Instrument;
 	};
 				
 	public void configSound(){
-		Instrument.getInstance().setSonId(R.raw.beep);
 		mMediaPlayer = MediaPlayer.create(this,Instrument.getInstance().getSonId());
 		mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		mMediaPlayer.setLooping(false);
