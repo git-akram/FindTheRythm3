@@ -7,6 +7,8 @@ import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -149,11 +151,16 @@ import com.mmm.findtherythm3.conf.Instrument;
 				if(deltaX < 0)
 					etat = Etat.centre;
 			}
-			else if(etat == Etat.gauche)
+			else if(etat == Etat.gauche){
 				if(deltaX > 0)
 					etat = Etat.centre;			
-		}
-			        
- }
+		 }
+	}
+	}	
+	@Override
+	public void onBackPressed() {
+	   Log.d("CDA", "onBackPressed Called");
+	   startActivity(new Intent(DrumsActivity.this , IndexActivity.class));
+	}
 
 }
