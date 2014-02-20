@@ -123,7 +123,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 			
 			if(deltaX == 0 && deltaY == 0)
 			{
-				Log.i(TAG, "Etat " + etat);
+				Log.i(TAG, "Etat ... " + etat);
 				return;
 			}
 			
@@ -138,7 +138,7 @@ import com.mmm.findtherythm3.conf.Instrument;
 						etat = Etat.gauche;
 						Log.i(TAG, "Etat "+etat);
 					}
-					else{
+					else if(deltaX < 0){
 						etat = Etat.droite;
 						Log.i(TAG, "Etat "+etat);
 					}							
@@ -147,11 +147,11 @@ import com.mmm.findtherythm3.conf.Instrument;
 			}
 			else if(etat == Etat.droite){
 				if(deltaX < 0)
-					etat = Etat.gauche;
+					etat = Etat.centre;
 			}
 			else if(etat == Etat.gauche)
 				if(deltaX > 0)
-					etat = Etat.droite;			
+					etat = Etat.centre;			
 		}
 			        
  }
